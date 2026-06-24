@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import static org.testng.Assert.assertTrue;
 public class WebpageTest {
     private static WebDriver driver;
     @BeforeTest
@@ -13,13 +12,15 @@ public class WebpageTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(2000);
-        driver.get("https://sauravsarkar-codersarcade.github.io/CA-GRADLE/"); }
+        driver.get("https://Mala106.github.io/DevopsLab/"); }
     @Test
     public void titleValidationTest(){
         String actualTitle = driver.getTitle();
-        String expectedTitle = "Tripillar Solutions";
+        System.out.println("Actual Title = " + actualTitle);
+        System.out.println("Expected Title = " + expectedTitle);
+        String expectedTitle = "My Website";
         Assert.assertEquals(actualTitle, expectedTitle);
-        assertTrue(true, "Title should contain 'Tripillar'");
+        assertTrue(actualTitle.length() > 0);
     }
     @AfterTest
     public void closeBrowser() throws InterruptedException {
